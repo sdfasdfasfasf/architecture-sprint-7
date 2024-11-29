@@ -1,0 +1,47 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: admin-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: admin
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: editor-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: editor-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: editor
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: reader-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: reader-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: reader
+  apiGroup: ""
+
+
